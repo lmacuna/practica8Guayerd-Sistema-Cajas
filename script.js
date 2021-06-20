@@ -195,6 +195,7 @@ do {
                         console.log("EFECTIVO TICKET/ENTRADA: $ " + suma);
                         console.log("EFECTIVO CAJA/PAGO: $ " + pago);
                         console.log("EFECTIVO CAJA/SALIDA: $ " + vuelto);
+                        console.log("\n\n\n");
                         alert("vuelto es: $ " + vuelto);
 
                         totalEfectivo = totalEfectivo + suma;
