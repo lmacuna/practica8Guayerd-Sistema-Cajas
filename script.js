@@ -19,7 +19,7 @@
 
 
 
-
+let productoss = [];
 let productos = [];
 let almacen = [];
 let frescos = [];
@@ -38,13 +38,22 @@ let caja = 2000;
 let retiro;
 let total;
 let sector;
+
 do {
     suma = 0;
+
+
     menu = parseInt(
         prompt(
             "¿Que operacion desea realizar?\n1.Cobrar\n2.Retirar dinero de la caja\n3.Ver balance de caja\n4.Ver los montos totales de todas las operaciones realizadas\n5.Salir"
         )
+
     );
+    productos.length = 0;
+    almacen.length = 0;
+    frescos.length = 0;
+    verduleria.length = 0;
+    panaderia.length = 0;
 
     switch (menu) {
         case 1:
@@ -52,8 +61,10 @@ do {
 
                 sector = parseInt(prompt("1-Almacen\n2-Frescos\n3-Verduleria\n4-Panaderia\n5-Cancelar operacion\n9-Fin Scanner-cobrar"));
                 if (sector > 0 && sector < 5) {
+
                     switch (sector) {
                         case 1:
+
                             precio = parseInt(prompt("Ingrese importe-producto | Finalizar  0"));
                             while (isNaN(precio)) {
                                 precio = parseInt(prompt("Has ingresado letras!!!\n por favor Ingrese importe-producto | Finalizar  0"));
@@ -114,6 +125,9 @@ do {
             productos = productos.concat(frescos);
             productos = productos.concat(verduleria);
             productos = productos.concat(panaderia);
+            productoss = productos;
+
+
             if (sector !== 5) {
 
 
@@ -129,6 +143,7 @@ do {
                         for (let i = 0; i < productos.length; i++) {
                             console.log(productos[i]);
                         }
+
                         console.log("Subtotal s/d : $ " + suma);
                         descuento = suma * 0.1;
                         suma = suma - descuento;
@@ -146,6 +161,8 @@ do {
                         for (let i = 0; i < productos.length; i++) {
                             console.log(productos[i]);
                         }
+
+
                         console.log("Subtotal s/d : $ " + suma);
                         descuento = suma * 0.05;
                         suma = suma - descuento;
@@ -163,6 +180,8 @@ do {
                         for (let i = 0; i < productos.length; i++) {
                             console.log(productos[i]);
                         }
+
+
 
                         console.log("Total a pagar : $ " + suma);
                         alert("Total a pagar : $ " + suma);
@@ -184,9 +203,12 @@ do {
                         console.log("Sin Scannear");
                         alert('Su dinero No es sufiente');
                         console.log("SIN MOVIMIENTOS");
-
+                        for (let i = 0; i < productos.length; i++) {
+                            productos.pop[i];
+                        }
 
                     }
+                    productoss += productos;
 
                     //PAGO TARJETAS
                 } else if (abono === 2) {
@@ -200,6 +222,7 @@ do {
 
             }
             break;
+
         case 2:
             retiro = parseInt(prompt('¿Cuánto dinero desea retirar?'));
             //total = caja + suma;
@@ -230,4 +253,5 @@ do {
     }
 
 } while (menu !== 5);
-console.log(productos);
+
+console.log(productoss);
