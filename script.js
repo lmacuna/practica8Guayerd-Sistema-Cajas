@@ -132,9 +132,9 @@ do {
                         console.log("Subtotal s/d : $ " + suma);
                         descuento = suma * 0.1;
                         suma = suma - descuento;
-                        console.log("TOTAL S/D : $ " + suma);
-                        console.log("DESCUENTO/EFECTIVO 10%\nimporte : $" + descuento);
 
+                        console.log("DESCUENTO/EFECTIVO 10%\nimporte : $" + descuento);
+                        console.log("Total a pagar : $ " + suma);
 
                         alert("descuento 10% $" + descuento);
                         alert("Total a pagar : $" + suma);
