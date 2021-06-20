@@ -125,7 +125,7 @@ do {
             productos = productos.concat(frescos);
             productos = productos.concat(verduleria);
             productos = productos.concat(panaderia);
-            productoss = productos;
+            //productoss = productos;
 
 
             if (sector !== 5) {
@@ -208,7 +208,8 @@ do {
                         }
 
                     }
-                    productoss += productos;
+                    productoss = productoss.concat(productos);
+                    //productoss += productos;
 
                     //PAGO TARJETAS
                 } else if (abono === 2) {
@@ -253,5 +254,11 @@ do {
     }
 
 } while (menu !== 5);
-
+console.log("\n\n\n");
+console.log("INFORME DE SALIDA: ");
+console.log("Salida de articulos");
+console.log("\n");
+for (let i = 0; i < productoss.length; i++) {
+    console.log(i + " " + productoss[i] + " ");
+}
 console.log(productoss);
