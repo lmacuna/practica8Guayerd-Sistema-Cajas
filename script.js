@@ -122,7 +122,7 @@ do {
                 let abono = parseInt(prompt("¿Con qué desea abonar?\n 1-EFECTIVO\n  2-TARJETA"));
                 //PAGO EFECTIVO
                 if (abono === 1) {
-                    alert("PAGO EN EFECTIGO");
+                    alert("PAGO EN EFECTIvO");
 
                     if (suma >= 5000) {
                         console.log("\n");
