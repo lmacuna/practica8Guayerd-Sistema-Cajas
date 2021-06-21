@@ -65,9 +65,9 @@ do {
                     switch (sector) {
                         case 1:
 
-                            precio = parseInt(prompt("Ingrese importe-producto | Finalizar  0"));
+                            precio = parseInt(prompt("Ingrese importe-producto"));
                             while (isNaN(precio)) {
-                                precio = parseInt(prompt("Has ingresado letras!!!\n por favor Ingrese importe-producto | Finalizar  0"));
+                                precio = parseInt(prompt("Has ingresado letras!!!\n por favor Ingrese importe-producto"));
 
                             }
                             almacen.push("Almacen $" + precio);
@@ -77,9 +77,9 @@ do {
 
 
                         case 2:
-                            precio = parseInt(prompt("Ingrese importe-producto | Finalizar  0"));
+                            precio = parseInt(prompt("Ingrese importe-producto"));
                             while (isNaN(precio)) {
-                                precio = parseInt(prompt("Has ingresado letras!!!\n por favor Ingrese importe-producto | Finalizar  0"));
+                                precio = parseInt(prompt("Has ingresado letras!!!\n por favor Ingrese importe-producto"));
 
                             }
                             frescos.push("Frescos $" + precio);
@@ -87,9 +87,9 @@ do {
                             alert("Subtotal: " + suma);
                             break;
                         case 3:
-                            precio = parseInt(prompt("Ingrese importe-producto | Finalizar  0"));
+                            precio = parseInt(prompt("Ingrese importe-producto"));
                             while (isNaN(precio)) {
-                                precio = parseInt(prompt("Has ingresado letras!!!\n por favor Ingrese importe-producto | Finalizar  0"));
+                                precio = parseInt(prompt("Has ingresado letras!!!\n por favor Ingrese importe-producto"));
 
                             }
                             verduleria.push("Verduleria $" + precio);
@@ -97,9 +97,9 @@ do {
                             alert("Subtotal: " + suma);
                             break;
                         case 4:
-                            precio = parseInt(prompt("Ingrese importe-producto | Finalizar  0"));
+                            precio = parseInt(prompt("Ingrese importe-producto"));
                             while (isNaN(precio)) {
-                                precio = parseInt(prompt("Has ingresado letras!!!\n por favor Ingrese importe-producto | Finalizar  0"));
+                                precio = parseInt(prompt("Has ingresado letras!!!\n por favor Ingrese importe-producto"));
 
                             }
                             panaderia.push("Panaderia $" + precio);
