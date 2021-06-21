@@ -133,7 +133,7 @@ do {
 
 
 
-                let abono = parseInt(prompt("¿Con qué desea abonar?\n 1-EFECTIVO\n  2-TARJETA"));
+                let abono = parseInt(prompt("FORMA DE PAGO:\n 1-EFECTIVO\n  2-TARJETA"));
                 //PAGO EFECTIVO
                 if (abono === 1) {
                     alert("PAGO EN EFECTIVO");
