@@ -38,7 +38,8 @@ let caja = 2000;
 let retiro;
 let total;
 let sector;
-
+let importeTicket = [];
+let cont = 0;
 do {
     suma = 0;
 
@@ -209,6 +210,8 @@ do {
                         }
 
                     }
+                    cont = cont + 1;
+                    importeTicket.push("Ticket Nº" + cont + " | Importe: $ " + suma);
                     productoss = productoss.concat(productos);
                     //productoss += productos;
 
@@ -262,4 +265,14 @@ console.log("\n");
 for (let i = 0; i < productoss.length; i++) {
     console.log(i + " " + productoss[i] + " ");
 }
+console.log("\n\n");
+console.log("Total efectivo parcial: $ " + totalEfectivo);
 console.log(productoss);
+console.log("\n\n");
+
+console.log("\n\n");
+console.log("Importes Tickets: ");
+console.log("\n");
+for (let i = 0; i < importeTicket.length; i++) {
+    console.log(importeTicket[i]);
+}
