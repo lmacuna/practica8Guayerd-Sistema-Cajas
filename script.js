@@ -40,6 +40,7 @@ let total;
 let sector;
 let importeTicket = [];
 let cont = 0;
+let opcion;
 do {
     suma = 0;
 
@@ -199,7 +200,28 @@ do {
                         alert("Total a pagar : $ " + suma);
 
                     }
+
                     pago = parseInt(prompt("Total: $ " + suma + "\nIngrese importe-pago :"));
+                    while (isNaN(pago)) {
+                        pago = parseInt(prompt("Has ingresado letras!\n" + "$ " + suma + "\nIngresa importe-pago :"));
+                    }
+                    while (pago < suma) {
+                        opcion = parseInt(prompt("El monto ingresado es insuficiente!!\n¿Quieres ingresar otra suma?\n1-Ingresar otra suma\n5-Cancelar operacion"));
+                        while (opcion !== 1 && opcion !== 5) {
+                            opcion = parseInt(prompt("< opcion incorrecta >\n¿Quieres ingresar otra suma?\n1-Si\n5-Cancelar operacion"));
+                        }
+                        if (opcion === 1) {
+                            pago = parseInt(prompt("Total: $ " + suma + "\nIngrese importe-pago :"));
+                            while (isNaN(pago)) {
+                                pago = parseInt(prompt("Has ingresado letras!\n" + "$ " + suma + "\nIngresa importe-pago :"));
+                            }
+                        } else if (opcion === 5) {
+                            sector = opcion;
+                            break;
+
+                        }
+
+                    }
 
                     if (pago >= suma) {
                         vuelto = pago - suma;
@@ -213,12 +235,14 @@ do {
                         totalEfectivo = totalEfectivo + suma;
                     } else {
                         alert("Sin Scannear");
+                        console.log("\n\n");
                         console.log("Sin Scannear");
                         alert('Su dinero No es sufiente');
                         console.log("SIN MOVIMIENTOS");
-                        for (let i = 0; i < productos.length; i++) {
-                            productos.pop[i];
-                        }
+                        console.log("Cancelado");
+                        console.log("\n\n");
+                        productos.length = 0;
+                        break;
 
                     }
                     cont = cont + 1;
@@ -268,7 +292,8 @@ do {
             break;
     }
 
-} while (menu !== 5);
+}
+while (menu !== 5);
 console.log("\n\n\n");
 console.log("INFORME DE SALIDA: ");
 console.log("Salida de articulos");
