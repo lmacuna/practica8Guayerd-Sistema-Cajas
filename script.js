@@ -134,7 +134,18 @@ do {
 
 
 
-                let abono = parseInt(prompt("FORMA DE PAGO:\n 1-EFECTIVO\n  2-TARJETA"));
+                let abono = parseInt(prompt("FORMA DE PAGO:\n 1-EFECTIVO\n  2-TARJETA\n5-CANCELAR"));
+                while (abono !== 1 && abono !== 2 && abono !== 5) {
+                    alert("< Opcion Incorrecta > ");
+                    abono = parseInt(prompt("FORMA DE PAGO:\n 1-EFECTIVO\n  2-TARJETA\n5-CANCELAR"));
+
+                }
+                if (abono === 5) {
+                    sector = abono;
+
+                }
+
+
                 //PAGO EFECTIVO
                 if (abono === 1) {
                     alert("PAGO EN EFECTIVO");
