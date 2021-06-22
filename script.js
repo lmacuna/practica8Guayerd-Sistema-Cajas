@@ -266,9 +266,9 @@ for (let i = 0; i < productoss.length; i++) {
     console.log(i + " " + productoss[i] + " ");
 }
 console.log("\n\n");
-console.log("Total efectivo parcial: $ " + totalEfectivo);
+
 console.log(productoss);
-console.log("\n\n");
+
 
 console.log("\n\n");
 console.log("Importes Tickets: ");
@@ -276,3 +276,5 @@ console.log("\n");
 for (let i = 0; i < importeTicket.length; i++) {
     console.log(importeTicket[i]);
 }
+console.log("\n");
+console.log("Total efectivo parcial: $ " + totalEfectivo);
