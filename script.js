@@ -150,6 +150,7 @@ do {
                 //PAGO EFECTIVO
                 if (abono === 1) {
                     alert("PAGO EN EFECTIVO");
+                    console.log("EFECTIVO");
 
                     if (suma >= 5000) {
                         console.log("\n");
@@ -201,19 +202,20 @@ do {
 
                     }
 
-                    pago = parseInt(prompt("Total: $ " + suma + "\nIngrese importe-pago :"));
+                    pago = parseFloat(prompt("Total: $ " + suma + "\nIngrese importe-pago :"));
                     while (isNaN(pago)) {
-                        pago = parseInt(prompt("Has ingresado letras!\n" + "$ " + suma + "\nIngresa importe-pago :"));
+                        pago = parseFloat(prompt("Has ingresado letras!\n" + "$ " + suma + "\nIngresa importe-pago :"));
                     }
                     while (pago < suma) {
                         opcion = parseInt(prompt("El monto ingresado es insuficiente!!\n¿Quieres ingresar otra suma?\n1-Ingresar otra suma\n5-Cancelar operacion"));
                         while (opcion !== 1 && opcion !== 5) {
-                            opcion = parseInt(prompt("< opcion incorrecta >\n¿Quieres ingresar otra suma?\n1-Si\n5-Cancelar operacion"));
+                            alert("< opcion incorrecta >");
+                            opcion = parseInt(prompt("¿Quieres ingresar otra suma?\n1-Si\n5-Cancelar operacion"));
                         }
                         if (opcion === 1) {
-                            pago = parseInt(prompt("Total: $ " + suma + "\nIngrese importe-pago :"));
+                            pago = parseFloat(prompt("Total: $ " + suma + "\nIngrese importe-pago :"));
                             while (isNaN(pago)) {
-                                pago = parseInt(prompt("Has ingresado letras!\n" + "$ " + suma + "\nIngresa importe-pago :"));
+                                pago = parseFloat(prompt("Has ingresado letras!\n" + "$ " + suma + "\nIngresa importe-pago :"));
                             }
                         } else if (opcion === 5) {
                             sector = opcion;
@@ -246,14 +248,115 @@ do {
 
                     }
                     cont = cont + 1;
-                    importeTicket.push("Ticket Nº" + cont + " | Importe: $ " + suma);
+                    importeTicket.push("Ticket Nº" + cont + " | Importe: $ " + suma + " *EFECTIVO*");
                     productoss = productoss.concat(productos);
                     //productoss += productos;
 
                     //PAGO TARJETAS
                 } else if (abono === 2) {
+                    alert("PAGO CON TARJETAS");
+                    console.log("TARJETA");
 
-                }
+                    if (suma >= 5000) {
+                        console.log("\n");
+                        for (let i = 0; i < productos.length; i++) {
+                            console.log(productos[i]);
+                        }
+
+                        console.log("Subtotal s/d : $ " + suma);
+                        descuento = suma * 0.15;
+                        suma = suma - descuento;
+
+                        console.log("DESCUENTO/DEBITO 15%\nimporte : $" + descuento);
+                        console.log("Total a pagar : $ " + suma);
+
+                        alert("descuento 15% $" + descuento);
+                        alert("Total a pagar : $" + suma);
+
+
+                    } else if (suma >= 2000) {
+                        console.log("\n");
+
+                        for (let i = 0; i < productos.length; i++) {
+                            console.log(productos[i]);
+                        }
+
+
+                        console.log("Subtotal s/d : $ " + suma);
+                        descuento = suma * 0.10;
+                        suma = suma - descuento;
+
+                        console.log("DESCUENTO/DEBITO 10%\nimporte : $" + descuento);
+                        console.log("Total a pagar : $ " + suma);
+
+                        alert("descuento 10% $ " + descuento);
+                        alert("Total a pagar : $ " + suma);
+
+
+                    } else {
+                        console.log("\n");
+
+                        for (let i = 0; i < productos.length; i++) {
+                            console.log(productos[i]);
+                        }
+
+
+
+                        console.log("Total a pagar : $ " + suma);
+                        alert("Total a pagar : $ " + suma);
+
+                    }
+
+                    pago = parseFloat(prompt("Total: $ " + suma + "\nIngrese importe-pago :"));
+                    while (isNaN(pago)) {
+                        pago = parseFloat(prompt("Has ingresado letras!\n" + "$ " + suma + "\nIngresa importe-pago :"));
+                    }
+                    while (pago < suma) {
+                        opcion = parseInt(prompt("El monto ingresado es insuficiente!!\n¿Quieres ingresar otra suma?\n1-Ingresar otra suma\n5-Cancelar operacion"));
+                        while (opcion !== 1 && opcion !== 5) {
+                            opcion = parseInt(prompt("< opcion incorrecta >\n¿Quieres ingresar otra suma?\n1-Si\n5-Cancelar operacion"));
+                        }
+                        if (opcion === 1) {
+                            pago = parseFloat(prompt("Total: $ " + suma + "\nIngrese importe-pago :"));
+                            while (isNaN(pago)) {
+                                pago = parseFloat(prompt("Has ingresado letras!\n" + "$ " + suma + "\nIngresa importe-pago :"));
+                            }
+                        } else if (opcion === 5) {
+                            sector = opcion;
+                            break;
+
+                        }
+
+                    }
+
+                    if (pago >= suma) {
+                        vuelto = pago - suma;
+                        console.log("\n");
+                        console.log("EFECTIVO TICKET/ENTRADA: $ " + suma);
+                        console.log("EFECTIVO CAJA/PAGO: $ " + pago + " Débito");
+                        console.log("EFECTIVO CAJA/SALIDA: $ " + " 00,00");
+                        console.log("\n\n\n");
+                        alert("vuelto es: $ " + vuelto);
+
+                        totalTarjDebito = totalTarjDebito + suma;
+
+                    } else {
+                        alert("Sin Scannear");
+                        console.log("\n\n");
+                        console.log("Sin Scannear");
+                        alert('Su dinero No es sufiente');
+                        console.log("SIN MOVIMIENTOS");
+                        console.log("Cancelado");
+                        console.log("\n\n");
+                        productos.length = 0;
+                        break;
+
+                    }
+                    cont = cont + 1;
+                    importeTicket.push("Ticket Nº" + cont + " | Importe: $ " + suma + " *TARJETA*");
+                    productoss = productoss.concat(productos);
+
+                } //FIN TARJETA
 
             } else if (sector === 5) {
                 alert("Sin operaciones");
@@ -312,5 +415,7 @@ console.log("\n");
 for (let i = 0; i < importeTicket.length; i++) {
     console.log(importeTicket[i]);
 }
-console.log("\n");
+console.log("\n\n");
 console.log("Total efectivo parcial: $ " + totalEfectivo);
+console.log("\n");
+console.log("Total Tarjetas de Débito parcial: $ " + totalTarjDebito);
