@@ -41,6 +41,12 @@ let sector;
 let importeTicket = [];
 let cont = 0;
 let opcion;
+let cajero = 1234;
+let usuario = parseInt(prompt("ingresa tu clave"));
+while (usuario != cajero) {
+    usuario = parseInt(prompt("Clave incorrecta!\ningresa tu clave nuevamente"));
+}
+alert("Ingreso correcto");
 do {
     suma = 0;
 
@@ -114,8 +120,17 @@ do {
                             alert("opcion invalida");
                             break;
                     }
+                } else if (sector === 9 && suma === 0) {
+                    alert("Finalizaste Scanner en cero\nIngresaste importe en cero\nSistema cancelo Ticket");
+                    console.log("\n\n");
+                    console.log("Scanner en cero\nTicket cancelado");
+                    console.log("\n");
+                    sector = 5;
+                    break;
                 } else if (sector === 9) {
+                    console.log("\n\n");
                     console.log("Fin de Scanner");
+                    console.log("\n");
                     alert("Fin de Scanner");
                     break;
                 }
@@ -231,6 +246,8 @@ do {
                         console.log("EFECTIVO TICKET/ENTRADA: $ " + suma);
                         console.log("EFECTIVO CAJA/PAGO: $ " + pago);
                         console.log("EFECTIVO CAJA/SALIDA: $ " + vuelto);
+                        console.log("\n");
+                        console.log("Atendido por: " + cajero)
                         console.log("\n\n\n");
                         alert("vuelto es: $ " + vuelto);
 
@@ -335,6 +352,8 @@ do {
                         console.log("EFECTIVO TICKET/ENTRADA: $ " + suma);
                         console.log("EFECTIVO CAJA/PAGO: $ " + pago + " Débito");
                         console.log("EFECTIVO CAJA/SALIDA: $ " + " 00,00");
+                        console.log("\n");
+                        console.log("Atendido por: " + cajero)
                         console.log("\n\n\n");
                         alert("vuelto es: $ " + vuelto);
 
