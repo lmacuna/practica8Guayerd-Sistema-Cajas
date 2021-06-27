@@ -438,3 +438,7 @@ console.log("\n\n");
 console.log("Total efectivo parcial: $ " + totalEfectivo);
 console.log("\n");
 console.log("Total Tarjetas de Débito parcial: $ " + totalTarjDebito);
+totalCaja = totalEfectivo + totalTarjDebito;
+console.log("\n\n\n");
+console.log("TOTAL CIERRE: \n")
+console.log("Total valores en caja : $" + totalCaja)
