@@ -31,37 +31,82 @@ let menu;
 let pago;
 let vuelto;
 let totalEfectivo = 0;
+let totalEfectivos = 0;
 let totalTarjCredito = 0;
 let totalTarjDebito = 0;
+let totalTarjDebitos = 0;
+let totalCajass = 0;
+let totalCajasss = 0;
+let totalCajas = 0;
 let totalCaja = 0;
 let caja = 2000;
 let retiro;
+let retiross = 0;
 let total;
 let sector;
 let importeTicket = [];
+let retiros = [];
 let cont = 0;
+let conta = 0;
 let opcion;
 let cajero = 1234;
-let usuario = parseInt(prompt("ingresa tu clave"));
+let usuario = parseInt(prompt("ingresa tu clave 1234"));
 while (usuario != cajero) {
-    usuario = parseInt(prompt("Clave incorrecta!\ningresa tu clave nuevamente"));
+    usuario = parseInt(prompt("Clave incorrecta!\ningresa tu clave nuevamente 1234"));
 }
 alert("Ingreso correcto");
 do {
     suma = 0;
+    retiro = 0;
+    totalCaja = 0;
+    pago = 0;
+    totalEfectivo = 0;
+    // totalEfectivos = 0;
+    vuelto = 0;
+    totalTarjDebito = 0;
 
 
-    menu = parseInt(
-        prompt(
-            "¿Que operacion desea realizar?\n1.Cobrar\n2.Retirar dinero de la caja\n3.Ver balance de caja\n4.Ver los montos totales de todas las operaciones realizadas\n5.Salir"
-        )
+    if (totalCajas > 10000) {
+        alert("debes realizar retiro de fondos");
 
-    );
+
+
+        menu = parseInt(
+            prompt(
+                "2.Retirar dinero "
+            )
+
+        );
+
+
+
+
+
+
+
+    } else {
+
+        menu = parseInt(
+            prompt(
+                "¿Que operacion desea realizar?\n1.Cobrar\n2.Retirar dinero de la caja\n3.Ver balance de caja\n4.Ver los montos totales de todas las operaciones realizadas\n5.Salir"
+            )
+
+        );
+    }
+
+
+
+
+
+
+
     productos.length = 0;
     almacen.length = 0;
     frescos.length = 0;
     verduleria.length = 0;
     panaderia.length = 0;
+
+
 
     switch (menu) {
         case 1:
@@ -243,8 +288,8 @@ do {
                     if (pago >= suma) {
                         vuelto = pago - suma;
                         console.log("\n");
-                        console.log("EFECTIVO TICKET/ENTRADA: $ " + suma);
-                        console.log("EFECTIVO CAJA/PAGO: $ " + pago);
+                        console.log("EFECTIVO TOTAL/TICKET: $ " + suma);
+                        console.log("EFECTIVO CAJA/ENTRADA: $ " + pago);
                         console.log("EFECTIVO CAJA/SALIDA: $ " + vuelto);
                         console.log("\n");
                         console.log("Atendido por: " + cajero)
@@ -252,6 +297,7 @@ do {
                         alert("vuelto es: $ " + vuelto);
 
                         totalEfectivo = totalEfectivo + suma;
+                        totalEfectivos = totalEfectivos + totalEfectivo;
                     } else {
                         alert("Sin Scannear");
                         console.log("\n\n");
@@ -268,7 +314,10 @@ do {
                     importeTicket.push("Ticket Nº" + cont + " | Importe: $ " + suma + " *EFECTIVO*");
                     productoss = productoss.concat(productos);
                     //productoss += productos;
+                    totalCaja = totalCaja + totalEfectivo;
+                    totalCajas = totalCajas + totalCaja;
 
+                    totalCajasss = totalCajasss + totalCaja;
                     //PAGO TARJETAS
                 } else if (abono === 2) {
                     alert("PAGO CON TARJETAS");
@@ -349,8 +398,8 @@ do {
                     if (pago >= suma) {
                         vuelto = pago - suma;
                         console.log("\n");
-                        console.log("EFECTIVO TICKET/ENTRADA: $ " + suma);
-                        console.log("EFECTIVO CAJA/PAGO: $ " + pago + " Débito");
+                        console.log("EFECTIVO TOTAL TICKET: $ " + suma);
+                        console.log("EFECTIVO CAJA/ENTRADA: $ " + pago + " Débito");
                         console.log("EFECTIVO CAJA/SALIDA: $ " + " 00,00");
                         console.log("\n");
                         console.log("Atendido por: " + cajero)
@@ -358,6 +407,7 @@ do {
                         alert("vuelto es: $ " + vuelto);
 
                         totalTarjDebito = totalTarjDebito + suma;
+                        totalTarjDebitos = totalTarjDebitos + totalTarjDebito;
 
                     } else {
                         alert("Sin Scannear");
@@ -374,6 +424,10 @@ do {
                     cont = cont + 1;
                     importeTicket.push("Ticket Nº" + cont + " | Importe: $ " + suma + " *TARJETA*");
                     productoss = productoss.concat(productos);
+                    totalCaja = totalCaja + totalTarjDebitos;
+                    totalCajas = totalCaja;
+                    totalCajasss = totalCajasss + totalCaja;
+
 
                 } //FIN TARJETA
 
@@ -386,12 +440,29 @@ do {
             break;
 
         case 2:
-            retiro = parseInt(prompt('¿Cuánto dinero desea retirar?'));
+            retiro = parseInt(prompt("¿Cuánto dinero desea retirar?\nTienes al momento $" + totalCajas + " \nRecuerda que 2000 son el fondo minimo"));
             //total = caja + suma;
-            if (caja > retiro) {
-                total = caja - retiro;
-                alert(total);
-            } else {
+            if (retiro < totalCajas && retiro > 2000) {
+                totalCajas = totalCajas - retiro;
+                totalCajass = totalCajass + totalCajas;
+
+                conta = conta + 1;
+
+                //totalCajass=totalCaja;
+                //totalCajass = totalCajass -retiro;
+
+
+                console.log("retiro de fondos : $" + retiro)
+                alert("Ha retirado $ " + retiro);
+                alert("Total aun en Caja : $" + totalCajas);
+                //totalCajas = 0;
+
+
+                retiros.push("retiro de valores: Nº" + conta + " $" + retiro);
+
+
+
+            } else if (retiro > totalCajas) {
                 alert('Fondos insuficientes');
             }
 
@@ -412,7 +483,14 @@ do {
         default:
             alert("Operación inválida");
             break;
+
     }
+
+
+
+
+
+
 
 }
 while (menu !== 5);
@@ -435,10 +513,23 @@ for (let i = 0; i < importeTicket.length; i++) {
     console.log(importeTicket[i]);
 }
 console.log("\n\n");
-console.log("Total efectivo parcial: $ " + totalEfectivo);
+console.log("Total efectivo parcial: $ " + totalEfectivos);
 console.log("\n");
-console.log("Total Tarjetas de Débito parcial: $ " + totalTarjDebito);
-totalCaja = totalEfectivo + totalTarjDebito;
+console.log("Total Tarjetas de Débito parcial: $ " + totalTarjDebitos);
+
+console.log("DETALLE DE RETIRADAS:");
+console.log("\n");
+if (retiros.length === 0) {
+    console.log("NO HUBO RETIRO DE VALORES")
+} else {
+    for (let i = 0; i < retiros.length; i++) {
+        console.log(retiros[i]);
+    }
+}
+
 console.log("\n\n\n");
 console.log("TOTAL CIERRE: \n")
-console.log("Total valores en caja : $" + totalCaja)
+    //console.log("Total valores en caja : $" + (totalCajass));
+console.log("TOTAL A RENDIR OPERADOR: $" + totalCajas);
+console.log("\n\n");
+console.log("TOTAL SISTEMA : $" + totalCajasss);
