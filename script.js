@@ -64,6 +64,7 @@ do {
     // totalEfectivos = 0;
     vuelto = 0;
     totalTarjDebito = 0;
+    precio = 0;
 
 
     if (totalCajas > 10000) {
@@ -425,7 +426,7 @@ do {
                     importeTicket.push("Ticket Nº" + cont + " | Importe: $ " + suma + " *TARJETA*");
                     productoss = productoss.concat(productos);
                     totalCaja = totalCaja + totalTarjDebitos;
-                    totalCajas = totalCaja;
+                    //totalCajas = totalCaja;
                     totalCajasss = totalCajasss + totalCaja;
 
 
