@@ -462,7 +462,7 @@ do {
                 //totalCajas = 0;
 
 
-                retiros.push("retiro de valores: Nº" + conta + " $" + retiro);
+                retiros.push("retiro de valores: Nº" + conta + " $" + retiro + "\n");
 
 
 
@@ -486,13 +486,15 @@ do {
                 console.log("NO HUBO RETIRO DE VALORES")
             } else {
                 for (let i = 0; i < retiros.length; i++) {
-                    retiros[i] + "\n";
+                    retiros[i];
+
                 }
+
             }
             alert("VISTA PREVIA CIERRE\n\n\nTotal efectivo parcial: $ " + totalEfectivos +
 
                 "\n\nTotal Tarjetas de Débito parcial: $ " + totalTarjDebitoss +
-                "\n\nRetiros: $ " + retiros +
+                "\n\nRetiros:\n " + retiros +
                 "\n\nTOTAL A RENDIR OPERADOR: $" + totalCajas +
                 "\n\n\n" +
                 "\nTOTAL SISTEMA : $" + totalCajasss);
