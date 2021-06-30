@@ -35,6 +35,7 @@ let totalEfectivos = 0;
 let totalTarjCredito = 0;
 let totalTarjDebito = 0;
 let totalTarjDebitos = 0;
+let totalTarjDebitoss = 0;
 let totalCajass = 0;
 let totalCajasss = 0;
 let totalCajas = 0;
@@ -64,6 +65,7 @@ do {
     // totalEfectivos = 0;
     vuelto = 0;
     totalTarjDebito = 0;
+    totalTarjDebitos = 0;
     precio = 0;
 
 
@@ -409,6 +411,7 @@ do {
 
                         totalTarjDebito = totalTarjDebito + suma;
                         totalTarjDebitos = totalTarjDebitos + totalTarjDebito;
+                        totalTarjDebitoss = totalTarjDebitoss + totalTarjDebitos;
 
                     } else {
                         alert("Sin Scannear");
@@ -425,9 +428,9 @@ do {
                     cont = cont + 1;
                     importeTicket.push("Ticket Nº" + cont + " | Importe: $ " + suma + " *TARJETA*");
                     productoss = productoss.concat(productos);
-                    totalCaja = totalCaja + totalTarjDebitos;
+                    //totalCaja = totalCaja + totalTarjDebitos;
                     //totalCajas = totalCaja;
-                    totalCajasss = totalCajasss + totalCaja;
+                    totalCajasss = totalCajasss + totalTarjDebitos;
 
 
                 } //FIN TARJETA
@@ -476,6 +479,23 @@ do {
 
         case 4:
             //IMPORTES TOTALES Mantenimiento
+            console.log("TOTAL CIERRE: \n")
+                //console.log("Total valores en caja : $" + (totalCajass));console.log("DETALLE DE RETIRADAS:");
+            console.log("\n");
+            if (retiros.length === 0) {
+                console.log("NO HUBO RETIRO DE VALORES")
+            } else {
+                for (let i = 0; i < retiros.length; i++) {
+                    retiros[i];
+                }
+            }
+            alert("\nTotal efectivo parcial: $ " + totalEfectivos +
+                "\n" +
+                "\nTotal Tarjetas de Débito parcial: $ " + totalTarjDebitoss +
+                "\nRetiros: $ " + retiros +
+                "\nTOTAL A RENDIR OPERADOR: $" + totalCajas +
+                "\n\n" +
+                "\nTOTAL SISTEMA : $" + totalCajasss);
             break;
 
         case 5:
@@ -516,7 +536,7 @@ for (let i = 0; i < importeTicket.length; i++) {
 console.log("\n\n");
 console.log("Total efectivo parcial: $ " + totalEfectivos);
 console.log("\n");
-console.log("Total Tarjetas de Débito parcial: $ " + totalTarjDebitos);
+console.log("Total Tarjetas de Débito parcial: $ " + totalTarjDebitoss);
 
 console.log("DETALLE DE RETIRADAS:");
 console.log("\n");
