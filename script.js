@@ -42,7 +42,7 @@ let totalCajas = 0;
 let totalCaja = 0;
 let caja = 2000;
 let retiro;
-let retiross;
+let retiross = [];
 let total;
 let sector;
 let importeTicket = [];
@@ -459,10 +459,16 @@ do {
         case 2:
             retiro = parseInt(prompt("¿Cuánto dinero desea retirar?\nTienes al momento $" + totalCajas + " \nRecuerda que 2000 son el fondo minimo"));
             //total = caja + suma;
+            while (totalCajas - retiro < 2000) {
+                retiro = parseInt(prompt("¿Cuánto dinero desea retirar?\nTienes al momento $" + totalCajas + " \nRecuerda que 2000 son el fondo minimo"));
+            }
             if (retiro < totalCajas && retiro > 2000) {
                 totalCajas = totalCajas - retiro;
-                totalCajass = totalCajass + totalCajas;
 
+
+
+
+                totalCajass = totalCajass + totalCajas;
                 conta = conta + 1;
 
                 //totalCajass=totalCaja;
@@ -505,9 +511,14 @@ do {
                 for (let i = 0; i < retiros.length; i++) {
                     retiros[i];
 
+
                 }
 
+
             }
+
+
+
             alert("VISTA PREVIA CIERRE\n\n\nTotal efectivo parcial: $ " + totalEfectivos +
 
                 "\n\nTotal Tarjetas de Débito parcial: $ " + totalTarjDebitoss +
