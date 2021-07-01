@@ -81,6 +81,18 @@ do {
             )
 
         );
+        while (menu !== 2) {
+            alert("debes realizar retiro de fondos ");
+
+
+
+            menu = parseInt(
+                prompt(
+                    "2.Retirar dinero "
+                )
+
+            );
+        }
 
 
 
