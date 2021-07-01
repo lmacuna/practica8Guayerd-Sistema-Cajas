@@ -104,7 +104,7 @@ do {
 
         menu = parseInt(
             prompt(
-                "¿Que operacion desea realizar?\n1.Cobrar\n2.Retirar dinero de la caja\n3.Ver balance de caja\n4.Ver los montos totales de todas las operaciones realizadas\n5.Salir"
+                "SISTEMA DE FACTURACION LMA\n\n¿Que operacion desea realizar?\n1.Cobrar\n2.Retirar dinero de la caja\n3.Ver balance de caja\n4.Ver los montos totales de todas las operaciones realizadas\n5.Salir"
             )
 
         );
