@@ -51,6 +51,7 @@ let cont = 0;
 let conta = 0;
 let opcion;
 let cajero = 1234;
+let mensaje;
 let usuario = parseInt(prompt("ingresa tu clave 1234"));
 while (usuario != cajero) {
     usuario = parseInt(prompt("Clave incorrecta!\ningresa tu clave nuevamente 1234"));
@@ -479,12 +480,15 @@ do {
 
         case 4:
             //IMPORTES TOTALES Mantenimiento
-            console.log("TOTAL CIERRE: \n")
-                //console.log("Total valores en caja : $" + (totalCajass));console.log("DETALLE DE RETIRADAS:");
+
+            //console.log("Total valores en caja : $" + (totalCajass));console.log("DETALLE DE RETIRADAS:");
             console.log("\n");
             if (retiros.length === 0) {
-                console.log("NO HUBO RETIRO DE VALORES")
-            } else {
+                //console.log("NO HUBO RETIRO DE VALORES $");
+                mensaje = "NO HUBO RETIRO DE VALORES ";
+                retiros = mensaje;
+            } else if (retiros.length !== 0) {
+
                 for (let i = 0; i < retiros.length; i++) {
                     retiros[i];
 
