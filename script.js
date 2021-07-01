@@ -42,7 +42,7 @@ let totalCajas = 0;
 let totalCaja = 0;
 let caja = 2000;
 let retiro;
-let retiross = 0;
+let retiross;
 let total;
 let sector;
 let importeTicket = [];
@@ -485,8 +485,9 @@ do {
             console.log("\n");
             if (retiros.length === 0) {
                 //console.log("NO HUBO RETIRO DE VALORES $");
-                mensaje = "NO HUBO RETIRO DE VALORES ";
-                retiros = mensaje;
+                console.log("NO HUBO RETIRO DE VALORES ");
+
+
             } else if (retiros.length !== 0) {
 
                 for (let i = 0; i < retiros.length; i++) {
@@ -498,6 +499,7 @@ do {
             alert("VISTA PREVIA CIERRE\n\n\nTotal efectivo parcial: $ " + totalEfectivos +
 
                 "\n\nTotal Tarjetas de Débito parcial: $ " + totalTarjDebitoss +
+                "\n\nCantidad de Retiros:\n " + retiros.length +
                 "\n\nRetiros:\n " + retiros +
                 "\n\nTOTAL A RENDIR OPERADOR: $" + totalCajas +
                 "\n\n\n" +
@@ -546,9 +548,11 @@ console.log("Total Tarjetas de Débito parcial: $ " + totalTarjDebitoss);
 
 console.log("DETALLE DE RETIRADAS:");
 console.log("\n");
+
 if (retiros.length === 0) {
-    console.log("NO HUBO RETIRO DE VALORES")
-} else {
+    console.log("NO HUBO RETIROS");
+} else if (retiros.length !== 0) {
+
     for (let i = 0; i < retiros.length; i++) {
         console.log(retiros[i]);
     }
