@@ -104,7 +104,7 @@ do {
 
         menu = parseInt(
             prompt(
-                "SISTEMA DE FACTURACION LMA\n¿Que operacion desea realizar?\n1.Cobrar\n2.Retirar dinero de la caja\n3.Ver balance de caja\n4.Ver los montos totales de todas las operaciones realizadas\n5.Salir"
+                "SISTEMA DE FACTURACION LMA\n\n\n1.COBRAR\n\n2.RETIRO DE EFECTIVO\n\n3.GESTION\n\n4.VISTA PREVIA CIERRE\n\n5.CIERRE"
             )
 
         );
@@ -539,7 +539,7 @@ do {
             //SALIR mantenimiento
             break;
         default:
-            alert("Operación inválida");
+            alert("< Operación inválida >");
             break;
 
     }
