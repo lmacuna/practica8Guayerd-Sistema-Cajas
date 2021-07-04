@@ -104,7 +104,7 @@ do {
 
         menu = parseInt(
             prompt(
-                "SISTEMA DE FACTURACION LMA\n\n¿Que operacion desea realizar?\n1.Cobrar\n2.Retirar dinero de la caja\n3.Ver balance de caja\n4.Ver los montos totales de todas las operaciones realizadas\n5.Salir"
+                "SISTEMA DE FACTURACION LMA\n¿Que operacion desea realizar?\n1.Cobrar\n2.Retirar dinero de la caja\n3.Ver balance de caja\n4.Ver los montos totales de todas las operaciones realizadas\n5.Salir"
             )
 
         );
@@ -460,7 +460,11 @@ do {
             retiro = parseInt(prompt("¿Cuánto dinero desea retirar?\nTienes al momento $" + totalCajas + " \nRecuerda que 2000 son el fondo minimo"));
             //total = caja + suma;
             while (totalCajas - retiro < 2000) {
-                retiro = parseInt(prompt("¿Cuánto dinero desea retirar?\nTienes al momento $" + totalCajas + " \nRecuerda que 2000 son el fondo minimo"));
+                retiro = parseInt(prompt("¿Cuánto dinero desea retirar?\nTienes al momento $" + totalCajas + " \nRecuerda que 2000 son el fondo minimo\n5-cancelar"));
+                if (retiro === 5) {
+                    sector = retiro;
+                    break;
+                }
             }
             if (retiro < totalCajas && retiro > 2000) {
                 totalCajas = totalCajas - retiro;
@@ -501,12 +505,14 @@ do {
 
             //console.log("Total valores en caja : $" + (totalCajass));console.log("DETALLE DE RETIRADAS:");
             console.log("\n");
-            if (retiros.length === 0) {
-                //console.log("NO HUBO RETIRO DE VALORES $");
-                console.log("NO HUBO RETIRO DE VALORES ");
+            /*
+                        if (retiros.length === 0) {
+                            //console.log("NO HUBO RETIRO DE VALORES $");
+                            console.log("NO HUBO RETIRO DE VALORES ");
 
 
-            } else if (retiros.length !== 0) {
+                        } else*/
+            if (retiros.length !== 0) {
 
                 for (let i = 0; i < retiros.length; i++) {
                     retiros[i];
